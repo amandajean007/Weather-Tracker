@@ -12,6 +12,7 @@
 .col {
     width: auto;
     flex-wrap: wrap;
+    flex-direction: column;
     height: 300px;
 }
 
@@ -26,13 +27,16 @@
     border-width: 2px;
     text-align: center;
     width: 300px;
-    padding: 10px;
+    padding: 20px;
+    margin: 10px;
 }
 
 #todaysWeather {
     border-style: solid;
     border-width: 2px;
     text-align: center;
+    padding: 20px;
+    margin: 10px;
 }
 
 #cityForm {
@@ -44,12 +48,16 @@
     border-width: 2px;
     text-align: center;
     width: 200px;
+    padding: 20px;
+    margin: 10px;
 }
 
 #fiveDay {
     border-style: solid;
     border-width: 2px;
     text-align: center;
+    padding: 20px;
+    margin: 10px;
 }
 
 .form-label {
@@ -58,7 +66,6 @@
 
 #city-text {
     width: 300px;
-    color: fu
 }
 
 button {

@@ -20,7 +20,7 @@ getWeatherButton.addEventListener("click", setCityWeather);
 
 fetch('api.openweathermap.org/data/2.5/weather?q='+feedbackFieldCity+'&appid=7c89fcf5fc9da80f2ff12bfa557dbb49')
 .then(response => {
-  return response.json();
+  return response.JSON();
 })
 .then(data => {
   today.appendChild(data);
