@@ -1,105 +1,88 @@
+// Add todays date
 var today = moment();
 $("#today").text(today.format("MMM Do, YYYY"));
 
-var feedbackFieldCity = document.getElementById("cityForm");
-var getWeatherButton = document.getElementById("getWeather");
-var cityList = document.getElementById("myCities");
+
+// Creates variables to attach Javascript commands to places in the HTML document
+  // In the header where todays date will be shown
 var today = document.getElementById("todaysWeather");
+  // Form where you type in the city to be searched, it grabs the info you type in with ".value"
+var cityInput = document.getElementById("cityForm").value;
+  // The button bellow the search city input box
+var getWeatherButton = document.getElementById("getWeather");
+  // Bottom Left Box where cities searched will be listed
+var cityList = document.getElementById("myCities");
+  // The object where the list of searched cities will be placed
+var cities = [];
+  // Storing my API key in a variable
+var APIKey = "7c89fcf5fc9da80f2ff12bfa557dbb49";
+  // Variable calling the API
+var queryURL = "http://api.openweathermap.org/data/2.5/weather?q="+cityInput+"&appid="+APIKey;
 
-function getCityWeather() {
+
+// Pulls cities from local storage with key="City " to add to the recently searched cities list in the bottom left box of the webpage
+function putCitiesOnPage() {
   cityList.textContent = localStorage.getItem("City ");
-}
+  // Takes in user input and makes it into an element and creates the list item and the complete button and pushes onto DOM
+  for (var i = 0; i < cities.length; i++) {
+    var City = cities[i];
+        // creates list item and pushes to the DOM
+        var ul = document.createElement("ul");
+        ul.textContent = City;
+        ul.setAttribute("data-index", i);
+        // Creates element to be pushed onto the DOM
+        var button = document.createElement("button");
+        button.textContent = "Remove City";
+        // Adds buttons and cities to the list
+        ul.appendChild(button);
+        cityList.appendChild(ul);
+      };
+    }
 
+// Adds Inputed City "value" into local storage with key "City ". Then puts them back on the page with function putCitiesOnPage().
 function setCityWeather() {
-    localStorage.setItem("City ", feedbackFieldCity.value);
-    getCityWeather();
+    localStorage.setItem("City ", cityInput);
+    putCitiesOnPage();
 }
-/*
-getWeatherButton.addEventListener("click", setCityWeather);
-*/
 
 //Retrieves information from the API
-fetch('api.openweathermap.org/data/2.5/weather?q='+feedbackFieldCity+'&appid=7c89fcf5fc9da80f2ff12bfa557dbb49')
-.then(response => {
-  return response.JSON();
-})
-.then(data => {
-  today.appendChild(data);
-})
-
-/*------------------------------------------------------------------------------------------------------------------------------------------------*/
-var cityInput = document.querySelector("#cityForm");
-var cityForm = document.querySelector("#city-form");
-var myCities = document.querySelector("#myCities");
-var cities = [];
-
-// TODO: What is the purpose of this function? .....................will pull the todos
-function renderTodos() {
-  // TODO: Describe the functionality of the following two lines of code. ........pulling from innerHTML to DOM including length for loop
-  myCities.innerHTML = ""; 
-  
-  // TODO: Describe the functionality of the following `for` loop. takes in user input and makes it into an element and creates the list item and the complete button and pushes onto dom
-  for (var i = 0; i < cities.length; i++) {
-    var todo = cities[i];
-// creates list item and pushes to the dom
-    var ul = document.createElement("ul");
-    ul.textContent = todo;
-    ul.setAttribute("data-index", i);
-//creates element to be pushed onto the dom
-    var button = document.createElement("button");
-    button.textContent = "Remove City";
-//appends to go onto dom once created
-    ul.appendChild(button);
-    myCities.appendChild(ul);
-    //when creating element- remember to append or will not show up on dom
-  }
+function getWeather(queryURL) {
+  fetch(queryURL)
+  .then(response => response.json())
+  .then(data => console.log(data));
 }
 
-// TODO: What is the purpose of the following function?
 function init() {
-  // TODO: What is the purpose of the following line of code?
-  //takes a string  oand turns it into an object
-  var storedTodos = JSON.parse(localStorage.getItem("todos"));
-  // TODO: Describe the functionality of the following `if` statement.          makes it so if nothing is in the string nothing will be added
-  if (storedTodos !== null) {
-    cities = storedTodos;
+  var storedCities = JSON.parse(localStorage.getItem("Cities"));
+  if (storedCities !== null) {
+    cities = storedCities;
   }
-  // TODO: Describe the purpose of the following line of code.     runs the function, pulls info back
-  renderTodos();
+  putCitiesOnPage();
 }
 
-function storeTodos() {
-  // TODO: Describe the purpose of the following line of code.      turns object into a string
-  localStorage.setItem("todos", JSON.stringify(cities));
+function storeCities() {
+  localStorage.setItem("Cities", JSON.stringify(cities));
 }
 
-// TODO: Describe the purpose of the following line of code.  when event submit is clicked it takes it to local storage
-cityForm.addEventListener("submit", function(event) {
+getWeatherButton.addEventListener("click", function(event) {
   event.preventDefault();
-  var todoText = cityInput.value.trim();
-  // TODO: Describe the functionality of the following `if` statement. if text box is left blank, return a 
-  if (todoText === "") {
+  var cityText = cityInput;
+  if (cityText === "") {
     return;
   }
- // TODO: Describe the purpose of the following lines of code.       adding a new value to that array 
-  cities.push(todoText);
-  cityInput.value = "";
- 
-  // TODO: What will happen when the following functions are called? .......will take the inputs and store them ...........recalls the info
-  storeTodos();
-  renderTodos();
+  cities.push(cityText);
+  cityInput = "";
+  storeCities();
+  putCitiesOnPage();
 });
 
-// TODO: Describe the purpose of the following line of code. ....... when you click this button, 
-myCities.addEventListener("click", function(event) {
+cityList.addEventListener("click", function(event) {
   var element = event.target;
-  // TODO: Describe the functionality of the following `if` statement.
   if (element.matches("button") === true) {
     var index = element.parentElement.getAttribute("data-index");
     cities.splice(index, 1);
-    // TODO: What will happen when the following functions are called?
-    storeTodos();
-    renderTodos();
+    storeCities();
+    putCitiesOnPage();
   }
 });
 
