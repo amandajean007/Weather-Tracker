@@ -1,0 +1,62 @@
+.header {
+    background-color:rgb(161, 5, 161);
+    height: 200px;
+    width: auto;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Gowun Dodum', sans-serif;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+.col {
+    width: auto;
+    flex-wrap: wrap;
+    height: 300px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#citySearch {
+    background-color: limegreen;
+    text-align: center;
+   width: 300px;
+   padding: 10px;
+}
+
+#todaysWeather {
+    background-color: mediumblue;
+    text-align: center;
+}
+
+#cityForm {
+    width: 300px;
+}
+
+#myCities {
+    background-color: mediumvioletred;
+    text-align: center;
+    width: 200px;
+}
+
+#fiveDay {
+    background-color: orange;
+    text-align: center;
+}
+
+.form-label {
+    font-size: 24px;
+}
+
+#city-text {
+    width: 300px;
+    color: fu
+}
+
+button {
+    background-color: rgb(161, 5, 161);
+}
