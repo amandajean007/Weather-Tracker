@@ -40,9 +40,12 @@
 
             <div class="col" id="citySearch">
                 <label class="form-label">Search</label>
-                <form method="POST">
-                    <input type="text" placeholder="City" name="cityForm" id="cityForm"/>
+                <form method="POST" id="city-form">
+                    <input type="text" placeholder="City" id="city-text"/>
                 </form>
+                <!--<form method="POST" id="state-form">
+                    <input type="text" placeholder="State" id="state-text"/>
+                </form>-->
                 <button id="getWeather">Get Weather</button>
             </div>
 
@@ -52,9 +55,8 @@
         </div>
 
         <div class="row align-items-center">
-
             <div>
-                <ul class="col" id="myCities"></ul>
+                <div class ="col" id="city-list"></div>
             </div>
 
             <div class="col" id="fiveDay">

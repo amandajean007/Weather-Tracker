@@ -1,5 +1,5 @@
 .header {
-    background-color:rgba(255, 255, 255, 0.87);
+    background-color:rgba(179, 126, 170);
     height: auto;
     width: auto;
     text-align: center;
@@ -32,7 +32,17 @@
     width: 300px;
     padding: 20px;
     margin: 10px;
-    background-color: rgb(255, 198, 144);
+    background-color: rgb(179, 126, 170);
+}
+
+#stateSearch {
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(179, 126, 170);
 }
 
 #todaysWeather {
@@ -41,21 +51,39 @@
     text-align: center;
     padding: 20px;
     margin: 10px;
-    background-color: rgb(231, 154, 255);
+    background-color: rgb(179, 126, 170);
 }
 
-#cityForm {
-    width: 300px;
+#city-form {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#myCities {
+#state-form {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#city-list {
     border-style: solid;
     border-width: 2px;
     text-align: center;
     width: 300px;
     padding: 20px;
     margin: 10px;
-    background-color: rgb(146, 255, 143);
+    background-color: rgb(179, 126, 170);
+}
+
+#state-list {
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(179, 126, 170);
 }
 
 #fiveDay {
@@ -64,7 +92,7 @@
     text-align: center;
     padding: 20px;
     margin: 10px;
-    background-color: rgb(176, 255, 231);
+    background-color: rgb(179, 126, 170);
 }
 
 #getWeather {
@@ -79,11 +107,21 @@
     width: 300px;
 }
 
+#state-text {
+    width: 300px;
+}
+
 button {
     background-color: rgba(255, 255, 255, 0.466);
+    padding: 2%;
+    margin: 10px;
 }
 
 body {
     background-image: url(../Capture.PNG);
 }
 
+ul {
+    margin: 2px;
+    padding: 2px;
+}
