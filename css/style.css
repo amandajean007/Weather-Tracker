@@ -16,13 +16,20 @@
     width: auto;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 300px;
+    height: auto;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+}
+
+.dark {
+    background-color:rgb(42, 53, 73);
+    padding: 5px;
+    margin: 5px;
+    color:cornsilk;
 }
 
 #citySearch {
