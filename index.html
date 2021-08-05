@@ -40,7 +40,7 @@
 
             <div class="col" id="citySearch">
                 <label class="form-label">Search</label>
-                <form method="POST" id="city-form">
+                <form class="row" method="POST" id="city-form">
                     <input type="text" placeholder="City" id="city-text"/>
                 </form>
                 <!--<form method="POST" id="state-form">
@@ -49,9 +49,9 @@
                 <button id="getWeather">Get Weather</button>
             </div>
 
-            <div class="col" id="todaysWeather">
+            <table class="col" id="todaysWeather">
                 <div class="flexbox row">
-                    <div id="cityName">cityname</div>
+                    <div id="name">cityname</div>
                     <div id="date">date</div>
                     <div id="icon">icon</div>
                 </div>
@@ -59,7 +59,7 @@
                 <div class="row" id="hum">Humidity: </div>
                 <div class="row" id="wind">Wind: </div>
                 <div class="row" id="uv">U.V. Index: </div>
-            </div>
+            </table>
         </div>
 
         <div class="row align-items-center">
@@ -71,39 +71,39 @@
                 5-Day Forecast:
                 <div class='flexbox row'>
                     <div class="col dark" id="day1">
-                        <div class="row" id="forecastDate1">F1D</div>
-                        <div class="row" id="forecastIcon1">F1I</div>
-                        <div class="row" id="forecastTemp1">F1T</div>
-                        <div class="row" id="forecastWind1">F1W</div>
-                        <div class="row" id="forecastHum1">F1W</div>
+                        <div class="row" id="forecastDate1">Date</div>
+                        <div class="row" id="forecastIcon1">Icon</div>
+                        <div class="row" id="forecastTemp1">Temp</div>
+                        <div class="row" id="forecastWind1">Wind</div>
+                        <div class="row" id="forecastHum1">Humidity</div>
                     </div>
                     <div class="col dark" id="day2">
-                        <div class="row" id="forecastDate2">F2D</div>
-                        <div class="row" id="forecastIcon2">F2I</div>
-                        <div class="row" id="forecastTemp2">F2T</div>
-                        <div class="row" id="forecastWind2">F2W</div>
-                        <div class="row" id="forecastHum2">F2H</div>
+                        <div class="row" id="forecastDate2">Date</div>
+                        <div class="row" id="forecastIcon2">Icon</div>
+                        <div class="row" id="forecastTemp2">Temp</div>
+                        <div class="row" id="forecastWind2">Wind</div>
+                        <div class="row" id="forecastHum2">Humidity</div>
                     </div>
                     <div class="col dark" id="day3">
-                        <div class="row" id="forecastDate3">F3D</div>
-                        <div class="row" id="forecastIcon3">F3I</div>
-                        <div class="row" id="forecastTemp3">F3T</div>
-                        <div class="row" id="forecastWind3">F3W</div>
-                        <div class="row" id="forecastHum3">F3H</div>
+                        <div class="row" id="forecastDate3">Date</div>
+                        <div class="row" id="forecastIcon3">Icon</div>
+                        <div class="row" id="forecastTemp3">Temp</div>
+                        <div class="row" id="forecastWind3">Wind</div>
+                        <div class="row" id="forecastHum3">Humidity</div>
                     </div>
                     <div class="col dark" id="day4">
-                        <div class="row" id="forecastDate4">F4D</div>
-                        <div class="row" id="forecastIcon4">F4I</div>
-                        <div class="row" id="forecastTemp4">F4T</div>
-                        <div class="row" id="forecastWind4">F4W</div>
-                        <div class="row" id="forecastHum4">F4H</div>
+                        <div class="row" id="forecastDate4">Date</div>
+                        <div class="row" id="forecastIcon4">Icon</div>
+                        <div class="row" id="forecastTemp4">Temp</div>
+                        <div class="row" id="forecastWind4">Wind</div>
+                        <div class="row" id="forecastHum4">Humidity</div>
                     </div>
                     <div class="col dark" id="day5">
-                        <div class="row" id="forecastDate5">F5D</div>
-                        <div class="row" id="forecastIcon5">F5I</div>
-                        <div class="row" id="forecastTemp5">F5T</div>
-                        <div class="row" id="forecastWind5">F5W</div>
-                        <div class="row" id="forecastHum5">F5H</div>
+                        <div class="row" id="forecastDate5">Date</div>
+                        <div class="row" id="forecastIcon5">Icon</div>
+                        <div class="row" id="forecastTemp5">Temp</div>
+                        <div class="row" id="forecastWind5">Wind</div>
+                        <div class="row" id="forecastHum5">Humidity</div>
                     </div>
                 </div>
             </div>
@@ -115,3 +115,18 @@
     <!--JAVASCRIPT-->
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
+
+
+
+
+
+
+
+
+
+    <table class="card-body table mx-auto my-4">
+        <th>
+            <p class="my-4">Results</p>
+        </th>
+        <tbody id="repo-table" class="mx-auto text-center"></tbody>
+    </table>

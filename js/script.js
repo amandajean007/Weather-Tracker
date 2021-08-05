@@ -46,9 +46,36 @@ function storecities() {
 
 getWeatherButton.addEventListener("click", function(event) {
   event.preventDefault();
-
+  // creates a variable to take the city input and add it to the API request
   var cityText = cityInput.value;
+  // Stores my API key in a variable
+  var APIKey = "49f3f0a393b9b135b6d926bc4536144b";
+  // Stores the API call in a variable
+  var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q="+cityText+"&appid="+APIKey;
 
+  // fetch API call
+  fetch(queryUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      //Loop over the data to generate a table, each table row will have a link to the request URL
+      for (var i=0; i< data.length; i++) {
+        // Creating elements: tablerow, tabledata, and anchor
+        var createTableRow = document.createElement('tr');
+        var tableData = document.createElement('td');
+
+        // Setting the text of link and the href of the link
+        link.textContent = data[i].html_url;
+        link.href = data[i].html_url
+
+        //Appending the link to the tabledata and then appending the tabledata to the tablerow
+        // The tablerow then gets appended to the tablebody
+        createTableRow.appendChild(tableData);
+        tableBody.appendChild(createTableRow);
+      }
+    });
 
   if (cityText === "") {
     return;
@@ -57,11 +84,11 @@ getWeatherButton.addEventListener("click", function(event) {
   cities.push(cityText);
   cityInput.value = "";
 
-
   storecities();
   rendercities();
 });
 
+// Will remove the city from the list when you click "remove"
 cityList.addEventListener("click", function(event) {
   var element = event.target;
 
@@ -78,125 +105,40 @@ cityList.addEventListener("click", function(event) {
 
 init();
 
-
-/*
-var stateInput = document.querySelector("#state-text");
-var stateForm = document.querySelector("#state-form");
-var stateList = document.querySelector("#state-list");
-var states = [];
-
-function renderstates() {
-
-  stateList.innerHTML = "";
-
-
-  for (var i = 0; i < states.length; i++) {
-    var state = states[i];
-
-    var ul = document.createElement("ul");
-    ul.textContent = state;
-    ul.setAttribute("data-index", i);
-
-    var button = document.createElement("button");
-    button.textContent = "Remove";
-
-    ul.appendChild(button);
-    stateList.appendChild(ul);
-  }
-}
-
-function init() {
-  var storedstates = JSON.parse(localStorage.getItem("states"));
-
-  if (storedstates !== null) {
-    states = storedstates;
-  }
-
-  renderstates();
-}
-
-function storestates() {
-  localStorage.setItem("states", JSON.stringify(states));
-}
-
-getWeatherButton.addEventListener("click", function(event) {
-  event.preventDefault();
-
-  var stateText = stateInput.value;
-
-  if (stateText === "") {
-    return;
-  }
-
-  states.push(stateText);
-  stateInput.value = "";
-
-  storestates();
-  renderstates();
-});
-
-stateList.addEventListener("click", function(event) {
-  var element = event.target;
-
-  // Checks if element is a button
-  if (element.matches("button") === true) {
-
-    var index = element.parentElement.getAttribute("data-index");
-    states.splice(index, 1);
-
-    storestates();
-    renderstates();
-  }
-});
-
-init()
-
-
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //---------Posts todays weather forecast API call-----------------------------------------------------------------------------------------------//
-
+/*
 var todaysWeather = document.getElementById("todaysWeather");
-  // Storing my API key in a variable
-var APIKey = "7c89fcf5fc9da80f2ff12bfa557dbb49";
 
-// Defines a function that retrieves information from the API using fetch
-function getWeather() {
-  // Variable holding the API call
-  var city = document.getElementById(cityInput);
-  var queryURL = "http://api.openweathermap.org/data/2.5/weather?q="+city+",US&appid="+APIKey;
-fetch(queryURL)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    for (var i = 0; i < data.length; i++) {
-      var listItem = document.createElement('li');
-      listItem.textContent = data[i].html_url;
-      todaysWeather.appendChild(listItem);
+function getApi() {
+  // Stores my API key in a variable
+  var APIKey = "49f3f0a393b9b135b6d926bc4536144b";
+  // Stores the API call in a variable
+  var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q="+cityInput+"&appid="+APIKey;
+
+  fetch(queryUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
       console.log(data);
-    }
-  });
-}
+      //Loop over the data to generate a table, each table row will have a link to the request URL
+      for (var i=0; i< data.length; i++) {
+        // Creating elements: tablerow, tabledata, and anchor
+        var creeateTableRow = document.createElement('tr');
+        var tableData = document.createElement('td');
+        var link = document.createElement('a');
 
-// When the Get Weather button is clicked on, 
-getWeatherButton.addEventListener("click", getWeather);
+        // Setting the text of link and the href of the link
+        link.textContent = data[i].html_url;
+        link.href = data[i].html_url
+
+        //Appending the link to the tabledata and then appending the tabledata to the tablerow
+        // The tablerow then gets appended to the tablebody
+        tableData.appendChild(link);
+        creeateTableRow.appendChild(tableData);
+        tableBody.appendChild(creeateTableRow); 
+      }
+    });
+};
+
+getWeatherButton.addEventListener("click", getApi()); */
