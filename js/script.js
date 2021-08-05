@@ -2,7 +2,7 @@
 var today = moment();
 $("#today").text(today.format("MMM Do, YYYY"));
 
-
+git 
 //--------------Adds city inputs to Local Storage and then re-places them back on the webpage ---------------------------------------------------//
 var cityInput = document.querySelector("#city-text");
 var cityForm = document.querySelector("#city-form");
