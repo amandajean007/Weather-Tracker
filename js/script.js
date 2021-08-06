@@ -93,46 +93,7 @@ getWeatherButton.addEventListener("click", function(event) {
  });
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-getWeatherButton.addEventListener("click", function(event) {
-  event.preventDefault();
-  // creates a variable to take the city input and add it to the API request
-  var cityText = cityInput.value;
-  // Stores my API key in a variable
-  var APIKey = "49f3f0a393b9b135b6d926bc4536144b";
-  // Stores the API call in a variable
-  var queryUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?q="+cityText+"&cnt={5}&appid="+APIKey;
 
-  // fetch API call
-  fetch(queryUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      show(data);
-    });
-
-  if (cityText === "") {
-    return;
-  }
-
-  cities.push(cityText);
-  cityInput.value = "";
-
-  function show(data) {
-    console.log(data);
-    forecastDate1.textContent = data.
-
-    /*temp.textContent = data.main.temp;
-    cityName.textContent = data.name;
-    icon.textContent = data.weather[0].icon;
-    wind.textContent = data.wind.speed;
-    humidity.textContent = data.main.humidity;*/
-  };
-
-  storecities();
-  rendercities();
- });
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Will remove the city from the list when you click "remove"
