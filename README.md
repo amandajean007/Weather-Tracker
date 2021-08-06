@@ -10,6 +10,9 @@ This project's aim is to help a client search any city and find deatils for that
 - jQuery
 - moment()
 
+## Instructions
+Open https://amandajean007.github.io/Weather-Tracker/ in your browser and type in the city you are looking for weather for.
+
 ## Illustrations
 ![screenShot](https://user-images.githubusercontent.com/85036414/128456708-46e42a0e-672c-4890-9a45-2e75349d6437.PNG)
 
