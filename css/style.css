@@ -1,3 +1,4 @@
+/***** BY CLASS *****/
 .header {
     background-color:rgba(179, 126, 170);
     height: auto;
@@ -25,6 +26,12 @@
     flex-direction: row;
 }
 
+/* Centers City, icon and temp output */
+.flexbox.row {
+    justify-content: center;
+}
+
+
 .dark {
     background-color:rgb(42, 53, 73);
     padding: 5px;
@@ -32,6 +39,12 @@
     color:cornsilk;
 }
 
+.form-label {
+    font-size: 24px;
+}
+
+
+/***** BY ID *****/
 #citySearch {
     border-style: solid;
     border-width: 2px;
@@ -106,10 +119,6 @@
     margin: 10px;
 }
 
-.form-label {
-    font-size: 24px;
-}
-
 #city-text {
     width: 90%;
 }
@@ -118,6 +127,15 @@
     width: 300px;
 }
 
+#cityName {
+    font-size: 36px;
+}
+
+#temp {
+    font-size: 36px;
+}
+
+/***** BY FEATURE *****/
 button {
     background-color: rgba(255, 255, 255, 0.466);
     padding: 2%;
