@@ -1,16 +1,17 @@
 /***** BY CLASS *****/
 .header {
-    background-color:rgba(179, 126, 170);
+    /* background-color:#98a4ff98; */
+    /* border-style: double;
+    border-width: 5px;
+    border-color: rgb(0, 0, 0); */
     height: auto;
-    width: auto;
     text-align: center;
-    font-size: 40px;
-    font-family: 'Gowun Dodum', sans-serif;
-    padding: 2.5%;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    font-size: 64px;
+    font-family: 'Abril Fatface', cursive;
+    /* padding: 2.5%;
+    margin: 5%; */
+    color:rgb(255, 255, 255);
+    font-weight: 800;
 }
 
 .col {
@@ -18,25 +19,21 @@
     flex-wrap: wrap;
     flex-direction: column;
     height: auto;
+    align-items: center;
+    margin: 10%;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+.container {
+    width: 100%;
+    /* padding: 10px;
+    margin: 10px; */
+    width: 400%;
+    background-color: rgba(255, 255, 255, 0.274);
 }
 
 /* Centers City, icon and temp output */
 .flexbox.row {
     justify-content: center;
-}
-
-
-.dark {
-    background-color:rgb(42, 53, 73);
-    padding: 5px;
-    margin: 5px;
-    color:cornsilk;
 }
 
 .form-label {
@@ -46,73 +43,55 @@
 
 /***** BY ID *****/
 #citySearch {
-    border-style: solid;
-    border-width: 2px;
     text-align: center;
-    width: 300px;
     padding: 20px;
     margin: 10px;
-    background-color: rgb(179, 126, 170);
-}
-
-#stateSearch {
-    border-style: solid;
-    border-width: 2px;
-    text-align: center;
-    width: 300px;
-    padding: 20px;
-    margin: 10px;
-    background-color: rgb(179, 126, 170);
+    background-color: #98a4ff98;
+    color:rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 600;
 }
 
 #todaysWeather {
-    border-style: solid;
-    border-width: 2px;
     text-align: center;
     padding: 20px;
     margin: 10px;
-    background-color: rgb(179, 126, 170);
+    background-color: #98a4ff98;
+    font-size: 36px;
+    color:rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+#future {
+    padding: 5px;
+    margin: 5px;
 }
 
 #city-form {
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
-#state-form {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+#cityName {
+    font-size: 47px;
 }
 
 #city-list {
-    border-style: solid;
-    border-width: 2px;
     text-align: center;
-    width: 300px;
+    width: auto;
     padding: 20px;
-    margin: 10px;
-    background-color: rgb(179, 126, 170);
-}
-
-#state-list {
-    border-style: solid;
-    border-width: 2px;
-    text-align: center;
-    width: 300px;
-    padding: 20px;
-    margin: 10px;
-    background-color: rgb(179, 126, 170);
+    margin: 15%;
 }
 
 #fiveDay {
-    border-style: solid;
-    border-width: 2px;
     text-align: center;
     padding: 20px;
     margin: 10px;
-    background-color: rgb(179, 126, 170);
+    background-color: #98a4ff98;
+    color:rgb(0, 0, 0);
+    font-size: 30px;
+    font-weight: 600;
 }
 
 #getWeather {
@@ -120,30 +99,23 @@
 }
 
 #city-text {
-    width: 90%;
+    width: 100%;
 }
 
-#state-text {
-    width: 300px;
-}
-
-#cityName {
-    font-size: 36px;
-}
-
-#temp {
-    font-size: 36px;
-}
 
 /***** BY FEATURE *****/
 button {
-    background-color: rgba(255, 255, 255, 0.466);
+    background-color: rgb(153, 153, 153);
     padding: 2%;
     margin: 10px;
+    color: beige;
 }
 
 body {
-    background-image: url(../Capture.PNG);
+    background-image: url(../water.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 ul {
