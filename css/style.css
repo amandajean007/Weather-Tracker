@@ -38,7 +38,7 @@ button {
 }
 
 body {
-    background-image: url(../water.jpg);
+    background-image: url(../Assets/water.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
