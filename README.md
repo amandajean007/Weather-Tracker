@@ -14,7 +14,7 @@ This project's aim is to help a client search any city and find deatils for that
 Open https://amandajean007.github.io/Weather-Tracker/ in your browser and type in the city you are looking for weather for.
 
 ## Illustrations
-![WEATHERTRACKER](https://user-images.githubusercontent.com/85036414/135498352-05ebbc93-a83c-470d-a847-4788061a1e0e.PNG)
+![weatherapp](https://user-images.githubusercontent.com/85036414/142027980-1b4d960f-166f-4824-a10a-23cb63d7748b.png)
 
 ## Scope of functionalities
 A client can search for a city and be presented with current and future conditions for that city and that city is added to the search history. The weather conditions that will be presented fot that city include an icon representation of conditions, the temperature, the humidity, the wind speed, and the UV index. There is a color indicator for favorable, moderate, or severe conditions. The 5-Day forcast includes an icon representation of weather conditions, the temperature, the wind speed, and the humidity. When you click on a city in the search history it will present the current and future conditions for that city.
