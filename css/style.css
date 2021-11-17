@@ -18,7 +18,7 @@
     width: 100%;
     padding: 20px;
     width: 400%;
-    background-color: rgba(0, 125, 136, 0.644);
+    background-color: rgba(255, 255, 255, 0.507);
     border-radius: 10px;
     align-items: center;
 }
@@ -38,10 +38,9 @@ button {
 }
 
 body {
-    background-image: url("../Assets/weather.jpg");
+    background-image: url("../Assets/colorstar.jpg");
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
 }
 
 .city-day {
@@ -53,7 +52,7 @@ ul{
 }
 
 .daily-card{
-    background-color: #8585859b;
+    background-color: #ffffffb6;
     margin-left: 15px;
     padding-left: 10px;
     padding-right: 10px;
