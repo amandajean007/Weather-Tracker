@@ -23,21 +23,30 @@
 </head>
 <body class="container">
 
-    <header>
+    <!-- <header>
         <header>
             <p class="header">Weather for</p>
             <p class="date" id="today"></p>
           </header>
     </header>
-    
+     -->
     <div class="row container">
+      <header>
+        <p class="header">Weather for</p>
+        <p class="date" id="today"></p>
+      </header>
         <aside class='col-lg-3'>
+          
             <form class="align-items-center">
+              
                 <div class="col-12 custom-mar">
                   <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+
                   <div class="input-group">
                     <input type="text" class="form-control" id="City" placeholder="Search a City">
-                    <button type="submit" id='submit' class="btn btn-primary col-12">Check Weather</button>
+                  </div>
+                  <div>
+                    <button type="submit" id='submit' class="btn custom-city-btn col-12">Check Weather</button>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="unitType" id="fahrenheit" value="imperial" checked>

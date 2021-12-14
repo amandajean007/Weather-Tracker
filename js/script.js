@@ -192,7 +192,7 @@ function displayPrevCity(){
             btnEl.text(tempArr[i]);
             btnEl.attr('value', tempArr[i]);
             btnEl.attr('type', 'button');
-            btnEl.addClass('btn btn-primary custom-city-btn col-12');
+            btnEl.addClass('btn custom-city-btn col-12');
             prevCityEl.append(btnEl);
 
         }
